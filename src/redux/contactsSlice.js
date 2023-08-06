@@ -23,7 +23,9 @@ export const contactsSlice = createSlice({
       .addCase(fetchContacts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
+      });
+
+    builder
       .addCase(addContact.pending, state => {
         state.isLoading = true;
       })
@@ -35,7 +37,9 @@ export const contactsSlice = createSlice({
       .addCase(addContact.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
+      });
+
+    builder
       .addCase(deleteContact.pending, state => {
         state.isLoading = true;
       })
