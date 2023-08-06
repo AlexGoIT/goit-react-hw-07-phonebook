@@ -6,12 +6,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import { Form } from './ContactForm.styled';
-import { addContact } from 'redux/phonebookSlice';
-import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 
 const ContactForm = () => {
-  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
 
     form.reset();
   };
