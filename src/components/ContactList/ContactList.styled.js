@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  max-height: 500px;
-  margin-top: 30px;
+  max-height: calc(100vh - 500px);
+  margin-top: 16px;
   padding-block: 4px;
   padding-left: 8px;
   display: flex;

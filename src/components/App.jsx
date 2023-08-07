@@ -10,6 +10,7 @@ import ContactList from './ContactList';
 import Filter from './Filter';
 import Loader from './Loader';
 import { ListTitle } from './App.styled';
+import AppFooter from './AppFooter';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const App = () => {
         {!error && <ContactList />}
         {isLoading && !error && <Loader />}
       </Container>
+      <AppFooter />
     </>
   );
 };
